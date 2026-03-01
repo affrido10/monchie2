@@ -124,7 +124,7 @@ export const CalendarView: React.FC = () => {
           </div>
 
           {/* Days grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 4 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 3 }}>
             {/* Empty cells */}
             {Array.from({ length: firstDay }).map((_, i) => (
               <div key={`empty-${i}`} />
@@ -144,8 +144,8 @@ export const CalendarView: React.FC = () => {
                   key={day}
                   onClick={() => setSelectedDate(dateStr)}
                   style={{
-                    aspectRatio: '1',
-                    borderRadius: 10,
+                    height: 52,
+                    borderRadius: 8,
                     border: isSelected
                       ? '2px solid var(--accent)'
                       : isToday
@@ -168,7 +168,7 @@ export const CalendarView: React.FC = () => {
                   }}
                 >
                   <span style={{
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: isToday ? 700 : 500,
                     color: isSelected ? 'var(--accent)' : isToday ? 'var(--accent)' : heat > 0 ? 'var(--text-primary)' : 'var(--text-muted)',
                   }}>
